@@ -1,0 +1,29 @@
+/*****************/
+/* General Stylings */
+
+*,
+*:before
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+body {
+    padding: 48px 16px;
+    background-color: darksalmon;
+    border: 5px solid burlywood;
+}
+
+.header {
+    margin-top: auto;
+    padding: 16px;
+    max-width: 800px;
+
+h1 {
+    font-family: Arial;
+    font-size: 3em;
+
+}
