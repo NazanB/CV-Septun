@@ -3,27 +3,122 @@
   box-sizing: border-box;
 }
 
-h1,
+html {
+  font-family: inherit;
+  font-size: 16px;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
-  font-
+  color: rgb(199, 22, 58);
 }
 
 body {
-  margin: 0px;
+  margin: 0.5rem;
+  padding: 1rem;
   background-color: lightsalmon;
-  border: 5px solid burlywood;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  color: rgb(10, 3, 3);
+  position: relative;
+  display: inline-block;
+}
+
+article {
+  position: relative;
+  left: 1.25rem;
 }
 
 .header {
-  margin-bottom: auto;
-  padding: 20px;
-  max-width: 800px;
-  background-color: salmon;
   text-align: center;
+  padding: 3rem 1rem;
+  padding-top: 4.5rem;
+  background-color: salmon;
+  position: relative;
+}
+
+.he {
+  font-size: 1.5rem;
+}
+
+.name {
+  color: crimson;
+  font-size: 2em;
+}
+
+.dev {
+  color: beige;
+  background-color: lightsalmon;
+  padding: 0.65rem;
+  font-size: 1em;
+}
+
+.hireme {
+  bottom: auto;
+  font-size: 1.25rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.hairstylist {
+  display: inline;
+  font-size: 1em;
+}
+
+.experience {
+  flex-wrap: wrap;
+}
+
+.experience .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.experience h2 {
+  margin-right: 0.65rem;
+}
+
+.main {
+  background-color: salmon;
+  padding-right: 1.5rem;
+}
+
+.phone {
+  color: black;
+}
+.mail {
+  color: black;
+}
+
+li + li {
+  margin-top: 0.65rem;
+}
+
+.nav-link {
+  padding: 0.25rem 0.5rem;
+  color: black;
+  background-color: lightsalmon;
+}
+
+.nav-li:hover {
+  color: yellow;
+  background-color: lightpink;
+}
+
+.nav-li:active {
+  background-color: crimson;
+}
+
+h1::before {
+  content: "✨";
+}
+
+h1::after {
+  content: "🐱‍🏍";
 }
