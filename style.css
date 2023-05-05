@@ -3,9 +3,41 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: rgb(243, 172, 172);
+  --text-color: black;
+  --accent-color: rgb(255, 111, 111);
+  --accent-text-color: black;
+  --nav-link-active-bg-color: rgb(145, 26, 26);
+}
+
 html {
-  font-family: inherit;
+  font-family: Arial, serif;
   font-size: 16px;
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media print {
+  .navigation {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hire-me {
+    position: fixed;
+  }
 }
 
 h2,
@@ -14,18 +46,28 @@ h4,
 h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(199, 22, 58);
+  color: rgb(245, 127, 150);
 }
 
 body {
+  display: block;
   margin: 0.5rem;
   padding: 1rem;
-  background-color: lightsalmon;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
-  color: rgb(10, 3, 3);
-  position: relative;
-  display: inline-block;
+  background-color: var(--background-color);
+  margin: 0;
+  color: var(--text-color);
+}
+
+*::selection {
+  background-color: var(--background-color);
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: var(--text-color);
 }
 
 article {
@@ -37,32 +79,47 @@ article {
   text-align: center;
   padding: 3rem 1rem;
   padding-top: 4.5rem;
-  background-color: salmon;
+  background-color: var(--background-color);
   position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    235deg,
+    var(--background-color),
+    var(--accent-color)
+  );
+  color: var(--accent-text-color);
 }
 
-.he {
+.heading-gr {
   font-size: 1.5rem;
 }
 
-.name {
-  color: crimson;
+.name-heading {
+  color: var(--accent-text-color);
   font-size: 2em;
 }
 
 .dev {
-  color: beige;
-  background-color: lightsalmon;
+  color: var(--text-color);
+  background-color: var(--background-color);
   padding: 0.65rem;
   font-size: 1em;
 }
 
-.hireme {
-  bottom: auto;
-  font-size: 1.25rem;
+.hire-me {
   position: absolute;
-  top: 1rem;
   right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--accent-color);
+}
+
+@media print {
+  .hireme {
+    display: none;
+  }
 }
 
 .hairstylist {
@@ -70,23 +127,14 @@ article {
   font-size: 1em;
 }
 
-.experience {
-  flex-wrap: wrap;
-}
-
-.experience .title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.experience h2 {
-  margin-right: 0.65rem;
-}
-
 .main {
-  background-color: salmon;
-  padding-right: 1.5rem;
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.main * + * {
+  margin-top: 3rem;
 }
 
 .phone {
@@ -100,19 +148,33 @@ li + li {
   margin-top: 0.65rem;
 }
 
+nav a {
+  margin-right: 1em;
+}
+
 .nav-link {
-  padding: 0.25rem 0.5rem;
-  color: black;
-  background-color: lightsalmon;
+  padding: 1rem;
+  color: var(--accent-text-color);
 }
 
 .nav-li:hover {
-  color: yellow;
-  background-color: lightpink;
+  color: var(--accent-text-color-color);
+  background-color: var(--accent-color);
 }
 
 .nav-li:active {
-  background-color: crimson;
+  background-color: var(--nav-link-active-bg-color);
+  color: var(--accent-text-color);
+}
+
+.nav-link:visited {
+  color: var(--accent-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
 }
 
 h1::before {
@@ -121,4 +183,19 @@ h1::before {
 
 h1::after {
   content: "🐱‍🏍";
+}
+
+.footer {
+  background-color: var(--accent-color);
+  padding: 1rem;
+  font-size: medium;
+}
+
+.footer-text {
+  text-align: center;
+  margin: 0;
+}
+
+.footer-link:hover {
+  color: var(--accent-text-color);
 }
