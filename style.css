@@ -3,14 +3,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --background-color: rgb(243, 172, 172);
-  --text-color: black;
-  --accent-color: rgb(255, 111, 111);
-  --accent-text-color: black;
-  --nav-link-active-bg-color: rgb(145, 26, 26);
-}
-
 html {
   font-family: Arial, serif;
   font-size: 16px;
@@ -37,7 +29,13 @@ h6 {
 }
 
 body {
-  display: block;
+  --background-color: rgb(243, 172, 172);
+  --text-color: black;
+  --accent-color: rgb(255, 111, 111);
+  --accent-text-color: black;
+  --nav-link-active-bg-color: rgb(145, 26, 26);
+
+  _display: block;
   padding: 1rem;
   background-color: var(--background-color);
   margin: 0;
@@ -96,7 +94,15 @@ a:active {
   top: 1rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
+  opacity: 0.5;
   background: var(--accent-color);
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.hire-me:hover,
+.header:focus-within .hire-me {
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 @media screen and (min-width: 992px) {
@@ -104,6 +110,7 @@ a:active {
     position: fixed;
   }
 }
+
 @media print {
   .hireme {
     display: none;
@@ -116,6 +123,11 @@ a:active {
   font-size: 1em;
 }
 
+.experience-subheading {
+  display: flex;
+  font-size: 1em;
+}
+
 .main {
   max-width: 60ch;
   margin: 0 auto;
@@ -124,6 +136,19 @@ a:active {
 
 .main * + * {
   margin-top: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: 80ch;
+  }
+}
+
+@media screen and (min-width: 786px) {
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .phone {
@@ -140,10 +165,11 @@ a:active {
 .nav-link {
   padding: 1rem;
   color: var(--accent-text-color);
+  transition: background-color 0.25s ease-in-out;
 }
 
 .nav-li:hover {
-  color: var(--accent-text-color-color);
+  color: var(--accent-text-color);
   background-color: var(--accent-color);
 }
 
